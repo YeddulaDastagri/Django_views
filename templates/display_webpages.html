@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <table border="50px">
+        <tr>
+            <th>topicname</th> 
+            <th>name</th> 
+            <th>pk_id</th> 
+            <th>urls</th> 
+            <th>email</th>
+        </tr> 
+    {% for wo in LWO %} 
+        <tr>
+            <td>{{ wo.topicname }}</td> 
+            <td>{{ wo.name }}</td> 
+            <td>{{ wo.pk }}</td> 
+            <td>{{ wo.urls }}</td> 
+            <td>{{ wo.email }}</td>
+        </tr> 
+    {% endfor %}
+    </table>
+    
+</body>
+</html>
