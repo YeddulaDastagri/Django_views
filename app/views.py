@@ -72,9 +72,11 @@ def display_webpages(request):
 
     return render(request,'display_webpages.html',d)
 def display_access(request):
-    LAO=AccessRecords.objects.all() 
+    LAO=AccessRecords.objects.all()   
+    LAO=AccessRecords.objects.filter(date__year='1987')  
+    LAO=AccessRecords.objects.filter(date__month='11')  
+    LAO=AccessRecords.objects.filter(date__year__lt='2000') 
     d={'LAO':LAO} 
-
     return render(request,'display_access.html',d)
 
 
