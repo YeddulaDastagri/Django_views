@@ -62,6 +62,12 @@ def display_topics(request):
 
 def display_webpages(request):
     LWO=WebPages.objects.all() 
+    LWO=Topic.objects.order_by('-topicname') 
+    LWO=WebPages.objects.filter(name__startswith='v')  
+    LWO=WebPages.objects.filter(name__endswith='i')  
+    LWO=WebPages.objects.filter(name__contains='i') 
+    LWO=WebPages.objects.filter(name__regex='^v\w+')   
+    LWO=WebPages.objects.filter(name__in=[1, 4])  
     d={'LWO':LWO}  
 
     return render(request,'display_webpages.html',d)
